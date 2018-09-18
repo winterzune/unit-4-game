@@ -21,20 +21,12 @@ $(document).ready(function() {
  var rivalAttack = 0;
  var rivalHealth = 10;
 
+
+
 // pokemons
 
 //when selection from previous page is made, store in var? so website remembers your choice of pokemon 
 //when choice is made, send said pokemon to the empty img tag (#chosenPokemon)
-
-
-
-
-//var charmander = $('<img/>');
-
-               //myImage.attr('width', 300);
-               //myImage.attr('height', 300);
-               //myImage.attr('class', "groupMediaPhoto");
-               //myImage.attr('src', /assets/images/charback.gif);
 
 
 
@@ -44,19 +36,29 @@ $(document).ready(function() {
     $("#misty").hide();
     $("#gary").hide();
 //create img tag that adds onix to the html(on #rivalPokemon)   
-    
+$("#chosenPokemon").html("<span id="rivalPokemon"><img src="/assets/images/onix.gif"></span>");
+//so that the rival pokemon moves to the right side of the screen  
+#rivalPokemon.animate({ top: "+=200px" }, "normal");       
  });
+
 //gary
  $("#gary").on("click", function() {
     $("#misty").hide();
     $("#brock").hide();
- //create img tag that adds eevee to the html(on #rivalPokemon)   
+ //create img tag that adds gengar to the html(on #rivalPokemon)   
+ $("#chosenPokemon").html("<span id="rivalPokemon"><img src="/assets/images/gengar.gif"></span>");
+ //so that the chosen pokemon moves to the right side of the screen  
+ #rivalPokemon.animate({ top: "+=200px" }, "normal");   
  });
+
 //misty
  $("#misty").on("click", function() {
     $("#brock").hide();
     $("#gary").hide();
- //create img tag that adds staryu to the html(on #rivalPokemon)      
+//create img tag that adds staryu to the html(on #rivalPokemon)   
+    $("#chosenPokemon").html("<span id="rivalPokemon"><img src="/assets/images/starmie.gif"></span>");
+ //so that the chosen pokemon moves to the right side of the screen  
+ #rivalPokemon.animate({ top: "+=200px" }, "normal");   
  });
 
 
@@ -66,16 +68,30 @@ $(document).ready(function() {
 $("#charmander").on("click", function() {
  $("#squirtle").hide();
  $("#bulbasaur").hide();
+ //so the back of the pokemon is inserted into the html
+ $("#chosenPokemon").html("<span id="chosenPokemon"><img src="/assets/images/charback.gif"></span>");
+ //so that said image moves to the left side of the game
+ #charmander.animate({ top: "+=200px" }, "normal");
 
 });
 $("#squirtle").on("click", function() {
     $("#charmander").hide();
     $("#bulbasaur").hide();
+//so the back of the pokemon is inserted into the html
+$("#chosenPokemon").html("<span id="chosenPokemon"><img src="/assets/images/squirtleback.gif"></span>");
+//so that said image moves to the left side of the game
+#squirtle.animate({ top: "+=200px" }, "normal");
 });
  $("#bulbasaur").on("click", function() {
     $("#squirtle").hide();
     $("#charmander").hide(); 
+//so the back of the pokemon is inserted into the html
+$("#chosenPokemon").html("<span id="chosenPokemon"><img src="/assets/images/bulbaback.gif"></span>");
+//so that said image moves to the left side of the game
+#bulbasaur.animate({ top: "+=200px" }, "normal");
 });       
+
+
  //when attack button is pressed
  //random number is generated to go through different options + alert of what happened
 //array of options 
