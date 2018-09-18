@@ -1,6 +1,6 @@
 body {
     background-size: 100%;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
 }
 
 /*img {
@@ -26,6 +26,7 @@ body {
 
     top: -100px;
     right: 100px;
+    
    
 }
 
@@ -33,6 +34,7 @@ body {
 
     top: 80px;
     right: 100px;
+    
    
 }
 
@@ -40,6 +42,7 @@ body {
 
     top: 60px;
     right: 100px;
+    
     
 }
 .container {

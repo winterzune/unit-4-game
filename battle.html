@@ -12,7 +12,7 @@
 </head>
 
 
-<body background="assets/images/pokeball-wall.jpg" >
+<body background="assets/images/Pokemon_Colosseum.png" >
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="assets/javascript/game.js"></script> 
 <!--our main container-->
@@ -54,14 +54,21 @@
 
 <!-- Trainer Choices -->
 <div class="trainers" class="row">
-<img src="assets/images/brock.png" alt="" class="Brock" height="150px" width="100px">
-</div>
+<button id="brock"><img src="assets/images/brock.png" alt="" class="Brock" height="150px" width="100px">
+</button></div>
 <div class="trainers">
-<img src="assets/images/gary.png" alt="" class="Gary" height="150px" width="100px">
-</div><div class="trainers">
-<img src="assets/images/misty.png" alt="" class="Misty" height="150px" width="100px">
+<button id="gary"><img src="assets/images/gary.png" alt="" class="Gary" height="150px" width="100px">
+</button></div><div class="trainers">
+<button id="misty"><img src="assets/images/misty.png" alt="" class="Misty" height="150px" width="100px"></button>
 </div></div>
 
+<br><br><br><br><br><br><br>
+<div class="pokemons" class="row">
+        <span id="chosenPokemon"><img src="assets/images/charback.gif" height="90px" width="90px">
+        </span></div>
+        <div class="pokemons">
+        <span id="rivalPokemon"><img src="assets/images/bulbasaurfront.gif" height="90px" width="90px">
+        </span></div></div>
 
 <div class="progress">
 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
