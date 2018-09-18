@@ -60,6 +60,22 @@ $(document).ready(function() {
  });
 
 
+//pokemon choice
+
+
+$("#charmander").on("click", function() {
+ $("#squirtle").hide();
+ $("#bulbasaur").hide();
+
+});
+$("#squirtle").on("click", function() {
+    $("#charmander").hide();
+    $("#bulbasaur").hide();
+});
+ $("#bulbasaur").on("click", function() {
+    $("#squirtle").hide();
+    $("#charmander").hide(); 
+});       
  //when attack button is pressed
  //random number is generated to go through different options + alert of what happened
 //array of options 
@@ -79,43 +95,43 @@ $(document).ready(function() {
    // counter2: "You lost 1HP";
     //counter3: "Critical Hit! You lost!";
 
-if randobtn == attack1 {
-    rivalHealth -5
-}
+//if randobtn == attack1 {
+    //rivalHealth -5//
+//}
 
-if randobtn == attack2 {
-    rivalHealth -1
-}
+//if randobtn == attack2 {
+    //rivalHealth -1//
+//}
 
-if randobtn == attack3 {
-    rivalHealth -10
-}
+//if randobtn == attack3 {
+    //rivalHealth -10
+//}
 
-if randobtn == counter1 {
-    Health -5
-}
+//if randobtn == counter1 {
+   // Health -5
+//}
 
-if randobtn == counter2 {
-    Health -1
-}
+//if randobtn == counter2 {
+  //  Health -1
+//}
 
-if randobtn == counter3 {
-    Health -10
-}
+//if randobtn == counter3 {
+  //  Health -10
+//}
 
 
 
 // loss or win
 
-if (health == -1) {
+//if (health == -1) {
 
-    alert("You Lost!")
+  //  alert("You Lost!")
 
-};
+//};
 
-if (rivalHealth == -1) {
-    alert("You Won!")
-}
+//if (rivalHealth == -1) {
+  //  alert("You Won!")
+//}
 
 
 
