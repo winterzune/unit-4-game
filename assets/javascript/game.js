@@ -36,9 +36,9 @@ $(document).ready(function() {
     $("#misty").hide();
     $("#gary").hide();
 //create img tag that adds onix to the html(on #rivalPokemon)   
-$("#chosenPokemon").html("<span id="rivalPokemon"><img src="/assets/images/onix.gif"></span>");
+$("#rivalPokemon").html('<span id="rivalPokemon"><img src="/assets/images/onix.gif"></span>');
 //so that the rival pokemon moves to the right side of the screen  
-#rivalPokemon.animate({ top: "+=200px" }, "normal");       
+$("#rivalPokemon").animate({ top: "+=200px" }, "normal");       
  });
 
 //gary
@@ -46,9 +46,9 @@ $("#chosenPokemon").html("<span id="rivalPokemon"><img src="/assets/images/onix.
     $("#misty").hide();
     $("#brock").hide();
  //create img tag that adds gengar to the html(on #rivalPokemon)   
- $("#chosenPokemon").html("<span id="rivalPokemon"><img src="/assets/images/gengar.gif"></span>");
+ $("#chosenPokemon").html('<span id="rivalPokemon"><img src="/assets/images/gengar.gif"></span>');
  //so that the chosen pokemon moves to the right side of the screen  
- #rivalPokemon.animate({ top: "+=200px" }, "normal");   
+ $("rivalPokemon").animate({ top: "+=200px" }, "normal");   
  });
 
 //misty
@@ -56,9 +56,9 @@ $("#chosenPokemon").html("<span id="rivalPokemon"><img src="/assets/images/onix.
     $("#brock").hide();
     $("#gary").hide();
 //create img tag that adds staryu to the html(on #rivalPokemon)   
-    $("#chosenPokemon").html("<span id="rivalPokemon"><img src="/assets/images/starmie.gif"></span>");
+    $("#chosenPokemon").html('<span id="rivalPokemon"><img src="/assets/images/starmie.gif"></span>');
  //so that the chosen pokemon moves to the right side of the screen  
- #rivalPokemon.animate({ top: "+=200px" }, "normal");   
+ $("#rivalPokemon").animate({ top: "+=200px" }, "normal");   
  });
 
 
@@ -66,93 +66,89 @@ $("#chosenPokemon").html("<span id="rivalPokemon"><img src="/assets/images/onix.
 
 
 $("#charmander").on("click", function() {
- $("#squirtle").hide();
- $("#bulbasaur").hide();
+$("#squirtle").hide();
+$("#bulbasaur").hide();
  //so the back of the pokemon is inserted into the html
- $("#chosenPokemon").html("<span id="chosenPokemon"><img src="/assets/images/charback.gif"></span>");
+$("#chosenPokemon").html('<span id="chosenPokemon"><img src="/assets/images/charback.gif"></span>');
  //so that said image moves to the left side of the game
- #charmander.animate({ top: "+=200px" }, "normal");
+ $("#charmander.animate")({ top: "+=200px" }, "normal");
 
 });
 $("#squirtle").on("click", function() {
     $("#charmander").hide();
     $("#bulbasaur").hide();
 //so the back of the pokemon is inserted into the html
-$("#chosenPokemon").html("<span id="chosenPokemon"><img src="/assets/images/squirtleback.gif"></span>");
+$("#chosenPokemon").html('<span id="chosenPokemon"><img src="/assets/images/squirtleback.gif"></span>');
 //so that said image moves to the left side of the game
-#squirtle.animate({ top: "+=200px" }, "normal");
+$("squirtle").animate({ top: "+=200px" }, "normal");
 });
  $("#bulbasaur").on("click", function() {
     $("#squirtle").hide();
     $("#charmander").hide(); 
 //so the back of the pokemon is inserted into the html
-$("#chosenPokemon").html("<span id="chosenPokemon"><img src="/assets/images/bulbaback.gif"></span>");
+$("#chosenPokemon").html('<span id="chosenPokemon"><img src="/assets/images/bulbaback.gif"></span>');
 //so that said image moves to the left side of the game
-#bulbasaur.animate({ top: "+=200px" }, "normal");
+$("bulbasaur").animate({ top: "+=200px" }, "normal");
 });       
 
 
- //when attack button is pressed
- //random number is generated to go through different options + alert of what happened
-//array of options 
+ 
+
 
 //attack button
-//var attackOptions {
-   //attack1: "You caused 5HP of damage";
-   //attack2: "You caused 1HP of damage";
-  // attack3: "Critical Hit! You won!";}
+$("#attack").on("click", function() {
 
-//when defense button is pressed
+//array of options 
+var attackOptions = ["You caused 5HP of damage","You caused 1HP of damage", "Critical Hit! You won!", "You lost 5HP",
+"You lost 1HP", "Critical Hit! You lost!"]
+
 //random number is generated to go through different options + alert of what happened
-//array of options   
-//defense button
-//var counterAttack {
-    //counter1: "You lost 5HP";
-   // counter2: "You lost 1HP";
-    //counter3: "Critical Hit! You lost!";
+var random = Math.floor(Math.random() * attackOptions.length);
 
-//if randobtn == attack1 {
-    //rivalHealth -5//
-//}
-
-//if randobtn == attack2 {
-    //rivalHealth -1//
-//}
-
-//if randobtn == attack3 {
-    //rivalHealth -10
-//}
-
-//if randobtn == counter1 {
-   // Health -5
-//}
-
-//if randobtn == counter2 {
-  //  Health -1
-//}
-
-//if randobtn == counter3 {
-  //  Health -10
-//}
+alert(attackOptions[random]);
+console.log(random);
 
 
+
+if (random == 0) {
+    rivalHealth = rivalHealth - 5;
+}
+
+
+else if (random == 1) {
+    rivalHealth = rivalHealth - 1;
+}
+
+else if (random == 2) {
+    rivalHealth = rivalHealth - 10;
+}
+
+else if (random == 3) {
+   Health = health - 5;
+}
+
+else if (random == 4) {
+  Health = health - 1;
+}
+
+else if (random == 5) {
+  Health = health - 10;
+}
 
 // loss or win
 
-//if (health == -1) {
+if (health == -1) {
 
-  //  alert("You Lost!")
+  alert("You Lost!")
 
-//};
+};
 
-//if (rivalHealth == -1) {
-  //  alert("You Won!")
-//}
-
-
-
-})
+if (rivalHealth == -1) {
+  alert("You Won!")
+}
 
 //gotta add play again button
 //gotta add give up button
 //add visible counters
+});
+});
