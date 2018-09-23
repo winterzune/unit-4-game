@@ -14,20 +14,21 @@ $(document).ready(function() {
     audioElement.pause();
  });
 
-
- // battle counters
  var attack = 0;
  var health = 10;
  var rivalAttack = 0;
  var rivalHealth = 10;
-
+ 
  health = "Your HP: " + health
  rivalHealth = "Rival HP: " + rivalHealth
-
+ 
  $("#health").html(health)
  $("#rivalHealth").html(rivalHealth)
-
-
+ 
+ 
+$("#reset").on("click", function() {
+    location.reload();
+});
 // pokemons
 
 //when selection from previous page is made, store in var? so website remembers your choice of pokemon 
@@ -68,32 +69,34 @@ $("#rivalPokemon").animate({ top: "+=200px" }, "normal");
 
 
 //pokemon choice
+//PKM onscreen order: charmander, bulbasaur, squirtle
 
-
-$("#charmander").on("click", function() {
-$("#squirtle").hide();
-$("#bulbasaur").hide();
+$("#chosenPokemon").on("click", function() {
+$("#middlePokemon").hide();
+$("#rivalPokemon").hide();
  //so the back of the pokemon is inserted into the html
-$("#chosenPokemon").html('<span id="chosenPokemon"><img src="/assets/images/charback.gif"></span>');
+$("#chosenPokemon").html('<span><img id="chosenPokemon" src="/assets/images/charback.gif"></span>');
  //so that said image moves to the left side of the game
- $("#charmander.animate")({ top: "+=200px" }, "normal");
+ //$("#charmander.animate")({ top: "+=200px" }, "normal");
 
 });
-$("#squirtle").on("click", function() {
-    $("#charmander").hide();
-    $("#bulbasaur").hide();
+
+$("#rivalPokemon").on("click", function() {
+    $("#rivalPokemon").hide();
+    $("#middlePokemon").hide();
 //so the back of the pokemon is inserted into the html
 $("#chosenPokemon").html('<span id="chosenPokemon"><img src="/assets/images/squirtleback.gif"></span>');
 //so that said image moves to the left side of the game
-$("squirtle").animate({ top: "+=200px" }, "normal");
+//$("squirtle").animate({ top: "+=200px" }, "normal");
 });
- $("#bulbasaur").on("click", function() {
-    $("#squirtle").hide();
-    $("#charmander").hide(); 
+
+ $("#middlePokemon").on("click", function() {
+    $("#middlePokemon").hide();
+    $("#rivalPokemon").hide(); 
 //so the back of the pokemon is inserted into the html
 $("#chosenPokemon").html('<span id="chosenPokemon"><img src="/assets/images/bulbaback.gif"></span>');
 //so that said image moves to the left side of the game
-$("bulbasaur").animate({ top: "+=200px" }, "normal");
+//$("bulbasaur").animate({ top: "+=200px" }, "normal");
 });       
 
 
@@ -102,6 +105,19 @@ $("bulbasaur").animate({ top: "+=200px" }, "normal");
 
 //attack button
 $("#attack").on("click", function() {
+
+// battle counters
+var attack = 0;
+var health = 10;
+var rivalAttack = 0;
+var rivalHealth = 10;
+
+health = "Your HP: " + health
+rivalHealth = "Rival HP: " + rivalHealth
+
+$("#health").html(health)
+$("#rivalHealth").html(rivalHealth)
+
 
 //array of options 
 var attackOptions = ["You caused 5HP of damage","You caused 1HP of damage", "Critical Hit! You won!", "You lost 5HP",
@@ -115,45 +131,42 @@ console.log(random);
 
 
 
-if (random == 0) {
+if (random === 0) {
     rivalHealth = rivalHealth - 5;
 }
 
 
-else if (random == 1) {
+else if (random === 1) {
     rivalHealth = rivalHealth - 1;
 }
 
-else if (random == 2) {
+else if (random === 2) {
     rivalHealth = rivalHealth - 10;
 }
 
-else if (random == 3) {
+else if (random === 3) {
    Health = health - 5;
 }
 
-else if (random == 4) {
+else if (random === 4) {
   Health = health - 1;
 }
 
-else if (random == 5) {
+else if (random === 5) {
   Health = health - 10;
 }
 
 // loss or win
 
-if (health == -1) {
+if (health === -1) {
 
   alert("You Lost!")
 
 };
 
-if (rivalHealth == -1) {
+if (rivalHealth === -1) {
   alert("You Won!")
 }
 
-//gotta add play again button
-//gotta add give up button
-//add visible counters
 });
 });
