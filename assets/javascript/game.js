@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 // Theme Song
     var audioElement = document.createElement("audio");
-    audioElement.setAttribute("src", "unit-4-game/assets/pokemon-theme-song.mp3");
+    audioElement.setAttribute("src", "assets/pokemon-theme-song.mp3");
  // song Buttons
     $(".start-song").on("click", function() {
     audioElement.play();
@@ -21,6 +21,11 @@ $(document).ready(function() {
  var rivalAttack = 0;
  var rivalHealth = 10;
 
+ health = "Your HP: " + health
+ rivalHealth = "Rival HP: " + rivalHealth
+
+ $("#health").html(health)
+ $("#rivalHealth").html(rivalHealth)
 
 
 // pokemons
